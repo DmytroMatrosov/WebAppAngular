@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+$primary: rgb(141, 100, 194);
+body {
+    margin:0;
+    font-family: "Rubik", "sans-serif";
+    font-size:20px;
+}
+.container {
+    margin: 0 auto;
+}
+header {
+    background: $primary;
+    padding: 1em;
+    a {
+        color: white;
+        text-decoration: none;
+    }
+    a.logo{
+        font-weight: bold;
+    }
+    nav{
+        float: right;
+
+        ul{
+        list-style-type: none;
+        margin: 0;
+        display: flex;
+
+            li a{
+                padding: 1em;
+                &:hover {
+                    background: darken($primary, 10%);
+                }
+            }
+        }
+    }
+}
+.text{
+    h1 {
+        margin-top: 1em;
+        padding: 30px;
+    }
+    p {
+        padding-left: 30px;
+    }
+}
+mat-toolbar{
+    background: rgb(141, 100, 194, 0.1)
+}
