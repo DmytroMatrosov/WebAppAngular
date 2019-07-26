@@ -5,6 +5,8 @@ import { MatToolbarModule } from '@angular/material';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatIconModule} from '@angular/material/icon';
+import { HttpClientModule } from '@angular/common/http';
+import { MatCardModule } from  '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +14,7 @@ import { ExpComponent } from './exp/exp.component';
 import { ProfileComponent } from './profile/profile.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { LoginComponent } from './login/login.component';
+import { ClassListComponent } from './class-list/class-list.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +22,8 @@ import { LoginComponent } from './login/login.component';
     ExpComponent,
     ProfileComponent,
     ContactsComponent,
-    LoginComponent
+    LoginComponent,
+    ClassListComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,9 @@ import { LoginComponent } from './login/login.component';
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
-    MatIconModule
+    MatIconModule,
+    HttpClientModule,
+    MatCardModule,
 
   ],
   providers: [],
