@@ -1,3 +1,5 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+$primary: rgb(141, 100, 194);
 .login-container {
     display: flex;
     flex-direction: column;
@@ -11,11 +13,12 @@
     text-align: right;
   }
   
-  input.login-right-align::-webkit-outer-spin-button,
-  input.login-right-align::-webkit-inner-spin-button {
-    display: none;
-  }
-  
   input.login-right-align {
     -moz-appearance: textfield;
+  }
+  mat-card-actions {
+    button {
+      background: $primary;
+      color: white;
+    }
   }

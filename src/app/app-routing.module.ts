@@ -4,6 +4,7 @@ import { ProfileComponent } from "./profile/profile.component";
 import { ExpComponent } from "./exp/exp.component";
 import { ContactsComponent } from "./contacts/contacts.component";
 import { LoginComponent } from "./login/login.component";
+import { ClassListComponent } from './classlist/classlist.component';
 
 
 const routes: Routes = [
@@ -11,6 +12,8 @@ const routes: Routes = [
   { path: "exp", component: ExpComponent },
   { path: "contacts", component: ContactsComponent },
   { path: "login", component: LoginComponent },
+  { path: "classlist", component: ClassListComponent },
+
 ];
 
 @NgModule({

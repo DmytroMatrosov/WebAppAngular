@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import {MatTableDataSource} from '@angular/material/table';
 
 @Component({
-  selector: 'app-class-list',
-  templateUrl: './class-list.component.html',
-  styleUrls: ['./class-list.component.scss']
+  selector: 'app-classlist',
+  templateUrl: './classlist.component.html',
+  styleUrls: ['./classlist.component.scss']
 })
 export class ClassListComponent implements OnInit {
-
   constructor() { }
+
+  displayedColumns: string[] = Object.keys(ELEMENT_DATA[0]);
+  dataSource = ELEMENT_DATA;
 
   ngOnInit() {
   }
@@ -33,12 +34,4 @@ const ELEMENT_DATA: ClassTable[] = [
   {position: 9, className: '1-j', year: 2001,},
 ];
 
-export class TableFilteringExample {
-  displayedColumns: string[] = ['className', 'year',];
-  dataSource = new MatTableDataSource(ELEMENT_DATA);
-
-  applyFilter(filterValue: string) {
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  }
-}
 
