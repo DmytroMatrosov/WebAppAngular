@@ -11,6 +11,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { CdkTableModule } from '@angular/cdk/table';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -42,7 +44,10 @@ import { ClassListComponent } from './classlist/classlist.component';
     MatButtonModule,
     MatTableModule,
     MatExpansionModule,
-    CdkTableModule,    
+    CdkTableModule,  
+    FormsModule,
+    ReactiveFormsModule,
+
 
   ],
   providers: [],

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-classlist',
@@ -6,32 +9,40 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./classlist.component.scss']
 })
 export class ClassListComponent implements OnInit {
-  constructor() { }
+  constructor(
+    private http: HttpClient,
+  ) { }
+  private endPoint: string = environment.APIEndpoint;
+  localStorageToken: string = localStorage.getItem('token');
 
-  displayedColumns: string[] = Object.keys(ELEMENT_DATA[0]);
-  dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = [
+    'className',
+    'classYear',
+    'numOfStudents'
+  ];
+  dataSource: ClassTable[];
 
   ngOnInit() {
+    // turn on httpService.
+    // send get req. to endpoint to recieve classlist.
+    // add to this req. url params 'Authorization' 
+    // after recieving response, to assign recieved data to dataSource (this.dataSource)
+    this.http.get(
+      `${this.endPoint}classes`,
+      { headers: { Authorization: this.localStorageToken } }
+    ).subscribe(
+      response => { 
+        this.dataSource = response['data'] as ClassTable[];
+      })
   }
-
 }
 
 export interface ClassTable {
   className: string;
-  year: number;
-  position: number;
+  classYear: number;
+  numOfStudents: number;
+  id: number;
+  classDescription: string;
+  isActive: boolean;
 }
-
-const ELEMENT_DATA: ClassTable[] = [
-  {position: 1, className: '1-a', year: 2001,},
-  {position: 2, className: '1-b', year: 2001,},
-  {position: 3, className: '1-c', year: 2001,},
-  {position: 4, className: '1-d', year: 2001,},
-  {position: 5, className: '1-e', year: 2001,},
-  {position: 6, className: '1-f', year: 2001,},
-  {position: 7, className: '1-g', year: 2001,},
-  {position: 8, className: '1-h', year: 2001,},
-  {position: 9, className: '1-j', year: 2001,},
-];
-
 

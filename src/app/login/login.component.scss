@@ -1,11 +1,11 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 $primary: rgb(141, 100, 194);
-.login-container {
+.login-container form {
     display: flex;
     flex-direction: column;
 }
   
-.login-container > * {
+.login-container form > * {
     padding-left: 5%;
     width: 30%;
 }
