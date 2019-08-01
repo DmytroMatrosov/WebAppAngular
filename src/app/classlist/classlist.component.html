@@ -3,11 +3,11 @@
         <mat-expansion-panel-header>
             <mat-panel-title>Активні класи</mat-panel-title>
         </mat-expansion-panel-header>
-        <mat-expansion-panel hideToggle class="groupofclasses">
-            <mat-expansion-panel-header>
-                <mat-panel-title>класи 1 - 11</mat-panel-title>
-            </mat-expansion-panel-header>
-            <mat-table [dataSource]="activeClassList">
+        <mat-expansion-panel hideToggle class="groupofclasses" *ngFor="">
+            <mat-expansion-panel-header >
+                <mat-panel-title>{{uniQueClass}}</mat-panel-title>
+            </mat-expansion-panel-header  >
+            <mat-table [dataSource]="">
                 
                 <ng-container matColumnDef="className">
                     <th mat-header-cell *matHeaderCellDef> Клас </th>
